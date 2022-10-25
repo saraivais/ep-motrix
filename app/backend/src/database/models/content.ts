@@ -42,4 +42,7 @@ Content.init({
   updatedAt: 'updated',
 });
 
+Content.belongsTo(User, { foreignKey: 'userId', as: 'user' });
+Content.hasMany(History, { foreignKey: 'contentId', as: 'history' });
+
 export default Content;
