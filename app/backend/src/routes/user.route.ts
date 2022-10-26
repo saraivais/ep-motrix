@@ -10,5 +10,6 @@ const userService = new UserService(User);
 const userController = new UserController(userService);
 
 userRoute.post('/login', (request, response, next) => userController.login(request, response, next));
+userRoute.post('/', (request, response, next) => userController.create(request, response, next));
 
 export default userRoute;
