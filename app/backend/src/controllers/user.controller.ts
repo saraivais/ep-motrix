@@ -5,6 +5,17 @@ import IUser from '../interfaces/IUser';
 class UserController {
   constructor(private service: UserService) {}
 
+  public async login(
+    request: Request,
+    response: Response,
+    _next: NextFunction,
+  ): Promise<Response> {
+    const loginInfo: IUser = request.body;
+    const token = await this.service.login(loginInfo);
+
+    return response.status(200).json({ token });
+  }
+
 }
 
 export default UserController;
