@@ -16,3 +16,11 @@ export function generateJwtToken({ id }: IUser):string {
   return token;
 }
 
+export function returnPayload(token: string): string {
+  try {
+    const decoded = jwt.verify(token, jwtSecret) as jwt.JwtPayload;
+    return decoded.data.id;
+  } catch (err) {
+    throw new CustomError(errorCatalog.invalidToken);
+  }
+}
