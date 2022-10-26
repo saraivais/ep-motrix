@@ -16,6 +16,16 @@ class UserController {
     return response.status(200).json({ token });
   }
 
+  public async create(
+    request: Request,
+    response: Response,
+    _next: NextFunction,
+  ): Promise<Response> {
+    const newUserInfo: IUser = request.body;
+    const token = await this.service.create(newUserInfo);
+
+    return response.status(200).json({ token });
+  }
 }
 
 export default UserController;
