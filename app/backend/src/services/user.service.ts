@@ -24,6 +24,19 @@ class UserService {
     return token;
   }
 
+  public async create(newUserInformation: IUser) {
+    const userInfo = await this.recoverUserInformation(newUserInformation.email);
+    if (userInfo) {
+      throw new CustomError(errorCatalog.alreadyInUse);
+    }
+    const passwordToSave = hashPassword(newUserInformation.password);
+
+    const createdUser = await this.model
+      .create({ ...newUserInformation, password: passwordToSave });
+    const token = generateJwtToken(createdUser);
+
+    return token;
+  }
 }
 
 export default UserService;
