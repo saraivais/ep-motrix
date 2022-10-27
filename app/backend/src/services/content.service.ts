@@ -3,6 +3,23 @@ import Content from '../database/models/content';
 class ContentService {
   constructor(private model: typeof Content, private history: typeof History) {}
 
+
+  private async updateHistory({
+    id,
+    title,
+    body,
+    created,
+    updated,
+  }: IContent):Promise<void> {
+    await this.history.create({
+      title,
+      body,
+      created,
+      updated,
+      contentId: id,
+    });
+  }
+
   public async getAll():Promise<IContent[]> {
     const result = await this.model.findAll();
     return result;
