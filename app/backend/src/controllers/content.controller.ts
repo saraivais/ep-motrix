@@ -64,6 +64,16 @@ class ContentController {
     return response.status(204).end();
   }
 
+  public async massDelete(
+    request: Request,
+    response: Response,
+    _next: NextFunction,
+  ): Promise<Response> {
+    const { deleteMany } = request.body;
+    await this.service.massDelete(deleteMany as number[]);
+
+    return response.status(204).end();
+  }
 }
 
 export default ContentController;
