@@ -53,6 +53,17 @@ class ContentController {
     return response.status(200).end();
   }
 
+  public async deleteOne(
+    request: Request,
+    response: Response,
+    _next: NextFunction,
+  ): Promise<Response> {
+    const { id } = request.params;
+    await this.service.deleteOne(Number(id));
+
+    return response.status(204).end();
+  }
+
 }
 
 export default ContentController;
