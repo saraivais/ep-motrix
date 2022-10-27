@@ -36,7 +36,7 @@ class ContentController {
 
     const result = await this.service.create(newContent, token as string);
 
-    return response.status(200).json(result);
+    return response.status(201).json(result);
   }
 
   public async update(
