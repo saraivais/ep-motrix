@@ -9,6 +9,10 @@ import { returnPayload } from '../helpers/jwtToken';
 class ContentService {
   constructor(private model: typeof Content, private history: typeof History) {}
 
+  private async verifyContentExistance(id: number):Promise<boolean> {
+    const exists = await this.model.findByPk(id);
+    return !!exists;
+  }
 
   private async updateHistory({
     id,
