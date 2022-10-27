@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import ContentService from '../services/content.service';
+import IContent from '../interfaces/IContent';
+
 class ContentController {
   constructor(private service: ContentService) {}
 
@@ -20,6 +22,19 @@ class ContentController {
   ): Promise<Response> {
     const { id } = request.params;
     const result = await this.service.getById(Number(id));
+
+    return response.status(200).json(result);
+  }
+
+  public async create(
+    request: Request,
+    response: Response,
+    _next: NextFunction,
+  ): Promise<Response> {
+    const newContent: IContent = request.body;
+    const token = request.headers.authorization;
+
+    const result = await this.service.create(newContent, token as string);
 
     return response.status(200).json(result);
   }
