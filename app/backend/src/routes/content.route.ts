@@ -11,5 +11,9 @@ const contentController = new ContentController(contentService);
 
 contentRoute.get('/:id', (request, response, next) => contentController.getById(request, response, next));
 
+
+contentRoute.post('/', (request, response, next) => contentController.create(request, response, next));
+
 contentRoute.get('/', (request, response, next) => contentController.getAll(request, response, next));
+
 export default contentRoute;
