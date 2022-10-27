@@ -13,6 +13,16 @@ class ContentController {
     return response.status(200).json(result);
   }
 
+  public async getById(
+    request: Request,
+    response: Response,
+    _next: NextFunction,
+  ): Promise<Response> {
+    const { id } = request.params;
+    const result = await this.service.getById(Number(id));
+
+    return response.status(200).json(result);
+  }
 }
 
 export default ContentController;
