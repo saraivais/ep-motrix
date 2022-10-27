@@ -9,4 +9,7 @@ const contentRoute = express.Router();
 const contentService = new ContentService(Content, History);
 const contentController = new ContentController(contentService);
 
+contentRoute.get('/:id', (request, response, next) => contentController.getById(request, response, next));
+
+contentRoute.get('/', (request, response, next) => contentController.getAll(request, response, next));
 export default contentRoute;
