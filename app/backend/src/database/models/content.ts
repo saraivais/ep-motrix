@@ -11,6 +11,10 @@ class Content extends Model {
   title!: string;
 
   body!: string;
+
+  created!: Date;
+
+  updated!: Date;
 }
 
 Content.init({
