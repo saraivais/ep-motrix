@@ -51,6 +51,14 @@ class ContentService {
     }
     return content;
   }
+
+  public async create(newContent: IContent, token: string) {
+    const decodedId = returnPayload(token);
+    const created = await this.model.create({ ...newContent, userId: decodedId });
+
+    await this.updateHistory(created);
+    return created;
+  }
 }
 
 export default ContentService;
