@@ -120,7 +120,7 @@ describe('Tests for Content & History', () => {
 
   describe('PATCH /content/:id - Updates a content and updates history', () => {
     before(() => {
-      sinon.stub(Content, 'findOne')
+      sinon.stub(Content, 'findByPk')
         .onCall(0)
         .resolves(null)
         .onCall(1)
