@@ -19,6 +19,11 @@ const errorCatalog = {
     code: 401,
     alias: 'Unauthorized',
   },
+  contentNotFound: {
+    msg: 'This content does not exist',
+    code: 404,
+    alias: 'Not found',
+  },
 };
 
 export default errorCatalog;
