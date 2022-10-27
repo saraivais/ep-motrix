@@ -20,6 +20,7 @@ const userMocks = {
     password: 'newpassword',
   },
   alreadyRegistered: {
+    id: 5,
     email: 'motrix@one.com',
     password: 'secondtry',
   },
