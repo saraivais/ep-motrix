@@ -33,8 +33,52 @@ describe('Tests for Content & History', () => {
     });
   });
 
+  describe('GET /content/:id - Returns one content with history & user information', () => {
+    before(() => {
+      sinon.stub(Content, 'findByPk')
+        .onCall(0)
+        .resolves(contentMocks.oneContent as unknown as Content)
+        .onCall(1)
+        .resolves(contentMocks.oneContent as unknown as Content)
+        .onCall(2)
+        .resolves(contentMocks.oneContent as unknown as Content)
+        .onCall(3)
+        .resolves(null);
+    });
 
-  describe('GET /content/:id - Returns one content with history & user information', () => {});
+    after(() => {});
+
+    it('Returns status 200 OK when the id exists', async () => {
+      const response = await chai.request(app).get('/content/7');
+      const { status } = response;
+
+      chai.expect(status).to.be.equal(200);
+    });
+
+    it('The returned object contains "user" and "history" keys from associations', async () => {
+      const response = await chai.request(app).get('/content/7');
+      const { body } = response;
+
+      chai.expect(body).to.have.property('user');
+      chai.expect(body).to.have.property('history');
+    });
+
+    it('The "history" key is an array', async () => {
+      const response = await chai.request(app).get('/content/7');
+      const { body: { history } } = response;
+
+      chai.expect(history).to.be.an('array');
+    });
+
+    it('Returns an error message when the id does not exist', async () => {
+      const response = await chai.request(app).get('/content/999');
+      const { body: { message } } = response;
+      const { status } = response;
+
+      chai.expect(status).to.be.equal(404);
+      chai.expect(message).to.be.equal('This content does not exist');
+    });
+  });
 
   describe('POST /content - Creates a new content and updates history', () => {});
 
