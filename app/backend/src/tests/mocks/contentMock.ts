@@ -75,6 +75,10 @@ const contentMocks = {
     created: '2022-10-21T00:00:00.000Z',
     updated: '2022-10-21T00:00:00.000Z',
   },
+  contentToUpdate: {
+    title: 'Duis ultrices justo at justo - Updated',
+    body: 'Vivamus suscipit neque in ullamcorper condimentum. Morbi et lacus eu augue sollicitudin porta a sit amet mi. Donec varius nec nulla et blandit. Aenean non consectetur magna. Cras eu dui ut massa euismod pharetra sed ac risus. Vivamus consectetur, lorem in commodo feugiat, sem lacus molestie enim, id consectetur arcu purus sed ipsum. Nullam maximus at lectus a dapibus. Quisque eros arcu, mollis non blandit nec, tristique id augue. Donec eget nibh in quam porttitor sodales. Proin congue mi nisl, non porta mauris tempor in. Sed quis rhoncus urna. Duis eget turpis aliquet, rhoncus sapien in, iaculis augue. In ac egestas arcu, tristique varius mi. Nunc commodo sapien a odio tempus consequat.',
+  },
 };
 
 export default contentMocks;
