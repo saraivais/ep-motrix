@@ -78,6 +78,15 @@ class ContentService {
     const updated = await this.getById(id);
     await this.updateHistory(updated);
   }
+
+  public async deleteOne(id: number):Promise<void> {
+    const exists = await this.verifyContentExistance(id);
+    if (!exists) {
+      throw new CustomError(errorCatalog.contentNotFound);
+    }
+
+    await this.model.destroy({ where: { id } });
+  }
 }
 
 export default ContentService;
