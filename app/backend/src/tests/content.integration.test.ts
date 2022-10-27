@@ -9,6 +9,7 @@ import History from '../database/models/history';
 
 // mocks
 import contentMocks from './mocks/contentMock';
+import tokenMocks from './mocks/tokenMocks';
 
 chai.use(chaiHttp);
 
@@ -80,7 +81,42 @@ describe('Tests for Content & History', () => {
     });
   });
 
-  describe('POST /content - Creates a new content and updates history', () => {});
+  describe('POST /content - Creates a new content and updates history', () => {
+    before(() => {
+      sinon.stub(Content, 'create').resolves(contentMocks.createdContent as unknown as Content);
+      sinon.stub(History, 'create').resolves(contentMocks.historyCreated as unknown as History);
+    });
+
+    after(() => {
+      sinon.restore();
+    });
+
+    it('Returns an error message if the jwt token is missing or invalid', async () => {
+      const response = await chai.request(app).post('/content').set({ Authorization: tokenMocks.invalidToken }).send(contentMocks.contentToCreate);
+      const { status } = response;
+      const { body: { message } } = response;
+
+      chai.expect(status).to.be.equal(401);
+      chai.expect(message).to.be.equal('Token must be a valid token');
+    });
+
+    it('Returns status 201 (created) status when successful', async () => {
+      const response = await chai.request(app).post('/content').set({ Authorization: tokenMocks.validToken }).send(contentMocks.contentToCreate);
+      const { status } = response;
+
+      chai.expect(status).to.be.equal(201);
+    });
+
+    it('Returns the created content containing "id", "userId", "created" and "updated" keys', async () => {
+      const response = await chai.request(app).post('/content').set({ Authorization: tokenMocks.validToken }).send(contentMocks.contentToCreate);
+      const { body } = response;
+
+      chai.expect(body).to.have.property('id');
+      chai.expect(body).to.have.property('userId');
+      chai.expect(body).to.have.property('created');
+      chai.expect(body).to.have.property('updated');
+    });
+  });
 
   describe('PATCH /content/:id - Updates a content and updates history', () => {});
 
