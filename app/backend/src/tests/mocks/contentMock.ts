@@ -38,8 +38,23 @@ const contentMocks = {
     userId: 2,
     title: 'Integer sed tellus neque.',
     body: 'Aliquam malesuada eros nec lacinia convallis. Curabitur vel libero sollicitudin, elementum erat non, consequat tortor. Donec ullamcorper a ligula vitae accumsan. Aliquam tellus ipsum, varius ac bibendum eu, molestie vitae est. Cras nec scelerisque magna. Donec eget nibh in quam porttitor sodales. Proin congue mi nisl, non porta mauris tempor in. Sed quis rhoncus urna. Duis eget turpis aliquet, rhoncus sapien in, iaculis augue. Ut justo lorem, laoreet et tincidunt vitae, molestie ut dui. Donec nec rutrum felis. Praesent cursus mi ut mi tincidunt sollicitudin. In nulla leo, tempor vel tempus quis, pellentesque eu massa. Aliquam eu massa consectetur, efficitur purus nec, tincidunt lectus. Nam vestibulum consequat tortor, quis suscipit risus blandit at.',
-    created: '2022-10-24T00:00:00.000Z',
+    created: '2022-10-22T00:00:00.000Z',
     updated: '2022-10-24T00:00:00.000Z',
+    user: {
+      email: 'motrix@one.com',
+    },
+    history: [
+      {
+        title: 'Integer sed tellus neque.',
+        body: 'Aliquam malesuada eros nec lacinia convallis. Curabitur vel libero sollicitudin, elementum erat non, consequat tortor. Donec ullamcorper a ligula vitae accumsan. Proin congue mi nisl, non porta mauris tempor in. Sed quis rhoncus urna. Duis eget turpis aliquet, rhoncus sapien in, iaculis augue. Ut justo lorem, laoreet et tincidunt vitae, molestie ut dui. Donec nec rutrum felis. Praesent cursus mi ut mi tincidunt sollicitudin. In nulla leo, tempor vel tempus quis, pellentesque eu massa. Aliquam eu massa consectetur, efficitur purus nec, tincidunt lectus. Nam vestibulum consequat tortor, quis suscipit risus blandit at.',
+        updated: '2022-10-23T00:00:00.000Z',
+      },
+      {
+        title: 'Integer sed tellus neque.',
+        body: 'Aliquam malesuada eros nec lacinia convallis. Curabitur vel libero sollicitudin, elementum erat non, consequat tortor. Donec ullamcorper a ligula vitae accumsan. In nulla leo, tempor vel tempus quis, pellentesque eu massa. Aliquam eu massa consectetur, efficitur purus nec, tincidunt lectus. Nam vestibulum consequat tortor, quis suscipit risus blandit at.',
+        updated: '2022-10-22T00:00:00.000Z',
+      },
+    ],
   },
 };
 
