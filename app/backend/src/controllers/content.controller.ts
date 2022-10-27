@@ -38,6 +38,21 @@ class ContentController {
 
     return response.status(200).json(result);
   }
+
+  public async update(
+    request: Request,
+    response: Response,
+    _next: NextFunction,
+  ): Promise<Response> {
+    const contentToUpdate: IContent = request.body;
+    const { id } = request.params;
+    const token = request.headers.authorization;
+
+    await this.service.update(contentToUpdate, token as string, Number(id));
+
+    return response.status(200).end();
+  }
+
 }
 
 export default ContentController;
