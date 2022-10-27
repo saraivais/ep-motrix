@@ -205,6 +205,49 @@ describe('Tests for Content & History', () => {
     });
   });
 
+  describe('DELETE /content - Deletes many contents', () => {
+    before(() => {
+      sinon.stub(Content, 'findByPk')
+        .onCall(0)
+        .resolves(null)
+        .onCall(1)
+        .resolves(null)
+        .onCall(2)
+        .resolves(contentMocks.createdContent as unknown as Content)
+        .onCall(3)
+        .resolves(contentMocks.createdContent as unknown as Content)
+        .onCall(4)
+        .resolves(contentMocks.createdContent as unknown as Content);
+    });
 
-  describe('DELETE /content - Deletes many contents', () => {});
+    after(() => {
+      sinon.restore();
+    });
+
+    it('Returns an error code if any id does not exist', async () => {
+      const response = await chai.request(app).delete('/content').set({ Authorization: tokenMocks.validToken }).send(contentMocks.badMassDelete);
+      const { status } = response;
+      const { body: { message } } = response;
+
+      chai.expect(status).to.be.equal(404);
+      chai.expect(message).to.be.equal('This content does not exist');
+    });
+
+    it('Returns an error message if token is missing or invalid', async () => {
+      const response = await chai.request(app).delete('/content').set({ Authorization: tokenMocks.invalidToken }).send(contentMocks.goodMassDelete);
+
+      const { status } = response;
+      const { body: { message } } = response;
+
+      chai.expect(status).to.be.equal(401);
+      chai.expect(message).to.be.equal('Token must be a valid token');
+    });
+
+    it('Returns status code 204 if successfully deleted contents', async () => {
+      const response = await chai.request(app).delete('/content').set({ Authorization: tokenMocks.validToken }).send(contentMocks.goodMassDelete);
+      const { status } = response;
+
+      chai.expect(status).to.be.equal(204);
+    });
+  });
 });
