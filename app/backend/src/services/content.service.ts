@@ -87,6 +87,10 @@ class ContentService {
 
     await this.model.destroy({ where: { id } });
   }
+
+  public async massDelete(ids: number[]):Promise<void> {
+    await Promise.all(ids.map((id) => this.deleteOne(id)));
+  }
 }
 
 export default ContentService;
