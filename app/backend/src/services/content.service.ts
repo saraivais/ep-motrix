@@ -1,5 +1,11 @@
 import History from '../database/models/history';
 import Content from '../database/models/content';
+import User from '../database/models/user';
+import IContent from '../interfaces/IContent';
+import CustomError from '../errors/customError';
+import errorCatalog from '../errors/errorCatalog';
+import { returnPayload } from '../helpers/jwtToken';
+
 class ContentService {
   constructor(private model: typeof Content, private history: typeof History) {}
 
@@ -58,6 +64,19 @@ class ContentService {
 
     await this.updateHistory(created);
     return created;
+  }
+
+  public async update(newContent: IContent, token: string, id: number) {
+    const exists = await this.verifyContentExistance(id);
+    if (!exists) {
+      throw new CustomError(errorCatalog.contentNotFound);
+    }
+    const decodedId = returnPayload(token);
+    await this.model.update({ ...newContent, userId: decodedId }, {
+      where: { id },
+    });
+    const updated = await this.getById(id);
+    await this.updateHistory(updated);
   }
 }
 
