@@ -118,7 +118,53 @@ describe('Tests for Content & History', () => {
     });
   });
 
-  describe('PATCH /content/:id - Updates a content and updates history', () => {});
+  describe('PATCH /content/:id - Updates a content and updates history', () => {
+    before(() => {
+      sinon.stub(Content, 'findOne')
+        .onCall(0)
+        .resolves(null)
+        .onCall(1)
+        .resolves(contentMocks.createdContent as unknown as Content)
+        .onCall(2)
+        .resolves(contentMocks.createdContent as unknown as Content)
+        .onCall(3)
+        .resolves(contentMocks.createdContent as unknown as Content)
+        .onCall(4)
+        .resolves(contentMocks.createdContent as unknown as Content);
+
+      sinon.stub(Content, 'update');
+      sinon.stub(History, 'create');
+    });
+
+    after(() => {
+      sinon.restore();
+    });
+
+    it('Returns an error message if the id does not exist', async () => {
+      const response = await chai.request(app).patch('/content/999').set({ Authorization: tokenMocks.validToken }).send(contentMocks.contentToUpdate);
+      const { status } = response;
+      const { body: { message } } = response;
+
+      chai.expect(status).to.be.equal(404);
+      chai.expect(message).to.be.equal('This content does not exist');
+    });
+
+    it('Returns an error message if the jwt token is missing or invalid', async () => {
+      const response = await chai.request(app).patch('/content/12').set({ Authorization: tokenMocks.invalidToken }).send(contentMocks.contentToUpdate);
+      const { status } = response;
+      const { body: { message } } = response;
+
+      chai.expect(status).to.be.equal(401);
+      chai.expect(message).to.be.equal('Token must be a valid token');
+    });
+
+    it('Returns status code 200 if successful', async () => {
+      const response = await chai.request(app).patch('/content/12').set({ Authorization: tokenMocks.validToken }).send(contentMocks.contentToUpdate);
+      const { status } = response;
+
+      chai.expect(status).to.be.equal(200);
+    });
+  });
 
   describe('DELETE /content/:id - Deletes one content', () => {});
 
