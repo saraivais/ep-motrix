@@ -76,7 +76,7 @@ describe('Tests for Users & Authorization', () => {
       const { body } = response;
       const { status } = response;
 
-      chai.expect(status).to.be.equal(200);
+      chai.expect(status).to.be.equal(201);
       chai.expect(body).to.have.property('token');
     });
 
