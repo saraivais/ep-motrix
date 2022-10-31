@@ -8,6 +8,7 @@ function CreateOrUpdate() {
   const { id } = useParams();
   const { pathname } = useLocation();
   const [content, setContent] = useState({ title: '', body: '' });
+  const [disabled, setDisabled] = useState(true);
 
   const { authorization: { auth }, shouldUpdate: { setNewContent } } = useContext(contentContext);
 
@@ -25,6 +26,14 @@ function CreateOrUpdate() {
       getExistingPost();
     }
   }, [pathname, id]);
+
+  useEffect(() => {
+    if (content.title.length !== 0 && content.body.length !== 0) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [content]);
 
   const editOrCreate = async () => {
     if (pathname !== '/create') {
@@ -45,7 +54,7 @@ function CreateOrUpdate() {
     <div>
       <input name="title" type="text" value={content.title} onChange={onChange} />
       <textarea name="body" cols="70" rows="10" value={content.body} onChange={onChange} />
-      <button type="button" onClick={editOrCreate}>Enviar</button>
+      <button type="button" onClick={editOrCreate} disabled={disabled}>Enviar</button>
     </div>
   );
 }
