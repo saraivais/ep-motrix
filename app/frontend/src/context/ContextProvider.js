@@ -6,6 +6,7 @@ import { getAllContent } from '../requests/content';
 function ContextProvider({ children }) {
   const [allContent, setAllContent] = useState([]);
   const [auth, setAuth] = useState('');
+  const [user, setUser] = useState('');
   const [newContent, setNewContent] = useState(true);
   const [deleteList, setDeleteList] = useState([]);
 
@@ -29,6 +30,8 @@ function ContextProvider({ children }) {
     authorization: {
       auth,
       setAuth,
+      user,
+      setUser,
     },
     shouldUpdate: {
       setNewContent,
@@ -37,7 +40,7 @@ function ContextProvider({ children }) {
       deleteList,
       setDeleteList,
     },
-  }), [allContent, auth, deleteList]);
+  }), [allContent, auth, deleteList, user]);
 
   return (
     <contentContext.Provider value={CONTEXT}>
