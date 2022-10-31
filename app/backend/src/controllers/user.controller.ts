@@ -24,7 +24,7 @@ class UserController {
     const newUserInfo: IUser = request.body;
     const token = await this.service.create(newUserInfo);
 
-    return response.status(200).json({ token });
+    return response.status(201).json({ token });
   }
 }
 
