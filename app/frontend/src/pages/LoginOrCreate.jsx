@@ -12,6 +12,7 @@ function LoginOrCreate() {
   const {
     authorization: {
       setAuth,
+      setUser,
     },
   } = useContext(contentContext);
 
@@ -30,6 +31,7 @@ function LoginOrCreate() {
       alert('Email ou senha inválidos!');
       setLoginInfo({ email: '', password: '' });
     }
+    setUser(loginInfo.email);
   };
 
   const createAndSaveToken = async () => {
