@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Login() {
+function Loading() {
   return (
     <div>
-      Login page
+      Loading...
     </div>
   );
 }
 
-export default Login;
+export default Loading;
