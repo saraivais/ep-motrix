@@ -5,6 +5,7 @@ import Content from './pages/Content';
 import Details from './pages/Details';
 import CreateOrUpdate from './pages/CreateOrUpdate';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/create" element={<CreateOrUpdate />} />
         <Route path="/update/:id" element={<CreateOrUpdate />} />
       </Routes>
+      <Footer />
     </>
   );
 }
