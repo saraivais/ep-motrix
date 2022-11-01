@@ -49,7 +49,7 @@ function LoginOrCreate() {
   };
 
   useEffect(() => {
-    if (loginInfo.email.length < 10 || loginInfo.password.length < 8) {
+    if (loginInfo.email.length < 10 || loginInfo.password.length < 6) {
       setValid(true);
     } else {
       setValid(false);
