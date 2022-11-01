@@ -28,7 +28,7 @@ The programming language used was **JavaScript**, with the superset **TypeScript
 To develop the Back-end portion of this project, **Node.js** was used with the **Express.js** to create a RESTful API, connected through the **Sequelize** ORM with a **MySQL** instance.   
 To add a security layer to this application, the **npm** libraries **jsonwebtoken** and **bcryptjs** were used to ascertain user authorization for harsher CRUD operations as **update** and **delete**, and to encrypt users' passwords into the database.   
 Also, to assure the proper functionality of the API, integration tests using **Mocha**, **Chai** and **Sinon** were created.   
-The API's documentation was created and published using **Postman** and can be found [here](link).   
+The API's documentation was created and published using **Postman** and can be found [here](https://documenter.getpostman.com/view/22527487/2s8YRiKtQv).   
 
 The connection between Back-end and Front-end parts of the application was made using **Axios**. The Front-end part of the project was developed using **React** and styled with **CSS3**. The **React Router** library was used to enable routing in this Single Page Application and **React's** native **Context API** and **Hooks** composed the application's state management.
 
@@ -97,7 +97,7 @@ A linguagem de programação utilizada foi o **JavaScript**, com o superset **Ty
 Para desenvolver a parte de Back-end deste projeto, **Node.js** foi usado com o **Express.js** para criar uma API RESTful, conectada por meio da ORM **Sequelize** com uma instância do **MySQL**.   
 Para adicionar uma camada de segurança a esta aplicação, as bibliotecas **npm** **jsonwebtoken** e **bcryptjs** foram usadas para verificar a autorização do usuário para operações CRUD mais rigorosas como **atualizar** e **excluir**, e para criptografar as senhas do usuários no banco de dados.   
 Além disso, para garantir o bom funcionamento da API, foram criados testes de integração usando **Mocha**, **Chai** e **Sinon**.   
-A documentação da API foi criada e publicada usando o **Postman** e pode ser encontrada [aqui](link).   
+A documentação da API foi criada e publicada usando o **Postman** e pode ser encontrada [aqui]([link](https://documenter.getpostman.com/view/22527487/2s8YRiKtQv)).   
 
 A conexão entre as partes Back-end e Front-end da aplicação foi feita usando o **Axios**. A parte Front-end do projeto foi desenvolvida usando **React** e estilizada com **CSS3**. A biblioteca **React Router** foi usada para habilitar o roteamento nesta Single Page Application e o **Context API**, nativo do **React**, e os **Hooks** compuseram o gerenciamento de estado do aplicativo.
 
