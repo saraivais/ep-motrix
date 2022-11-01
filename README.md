@@ -34,6 +34,32 @@ The connection between Back-end and Front-end parts of the application was made 
 
 ### Comments
 ### Installation
+Before proceding to the installation, please make sure you have Docker, Docker-compose and Node.js installed on your machine.
+
+1. Clone the repository and access the created directory:
+```
+git clone 
+cd ep-motrix
+```
+
+2. Use the following script command to build & start the application:
+```
+npm run compose:up
+```
+
+3. Access via browser the Front-end part of this application using the url:
+```
+http://localhost:3000/
+```
+4. If you wish to test the API using its integration tests:
+4.1. Use the following script command to access the back-end container:
+```
+npm run enter:backend
+```
+4.2. Run the test command:
+```
+npm run test
+```
 
 </details>
 
@@ -71,5 +97,5 @@ A conexão entre as partes Back-end e Front-end da aplicação foi feita usando 
 
 ### Comentários
 ### Instalação
-
+Antes de iniciar a instalação, por favor se assegure que possui instalados Docker, Docker-compose e Node.js em sua máquina.
 </details>
