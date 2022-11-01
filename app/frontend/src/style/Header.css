@@ -21,6 +21,18 @@
   justify-content: space-between;
 }
 
+.user-greeting {
+  background-color: #1F1F1F;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  padding: 10px 18px;
+}
+
+.user-mail {
+  color: #2EB8E8;
+}
+
 .header-button {
   background-color: white;
   border: none;
