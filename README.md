@@ -52,14 +52,14 @@ npm run compose:up
 http://localhost:3000/
 ```
 4. If you wish to test the API using its integration tests:
-4.1. Use the following script command to access the back-end container:
-```
-npm run enter:backend
-```
-4.2. Run the test command:
-```
-npm run test
-```
+  1. Use the following script command to access the back-end container:
+  ```
+  npm run enter:backend
+  ```
+  2. Run the test command:
+  ```
+  npm test
+  ```
 
 </details>
 
@@ -98,4 +98,29 @@ A conexão entre as partes Back-end e Front-end da aplicação foi feita usando 
 ### Comentários
 ### Instalação
 Antes de iniciar a instalação, por favor se assegure que possui instalados Docker, Docker-compose e Node.js em sua máquina.
+1. Clone o repositório e acesse o diretório criado:
+```
+git clone
+cd ep-motrix
+```
+
+2. Use o seguinte comando de script para construir e iniciar o aplicativo:
+```
+npm run compose:up
+```
+
+3. Acesse via navegador a parte Front-end deste aplicativo usando a url:
+```
+http://localhost:3000/
+```
+4. Se você deseja testar a API usando seus testes de integração:
+
+  1. Use o seguinte comando de script para acessar o contêiner de back-end:
+  ```
+  npm run enter:backend
+  ```
+  2. Execute o comando de teste:
+  ```
+  npm test
+  ```
 </details>
