@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../style/HistoryCard.css';
 
 function HistoryCard(props) {
   const {
@@ -9,10 +10,14 @@ function HistoryCard(props) {
   } = props;
 
   return (
-    <div>
-      <h3>{title}</h3>
-      <p>{body}</p>
-      <p>{updated}</p>
+    <div className="history-card">
+      <h3 className="history-card-title">{title}</h3>
+      <p className="history-card-body">{body}</p>
+      <p className="history-card-update">
+        Modificado em:
+        {' '}
+        <span className="history-date">{updated}</span>
+      </p>
     </div>
   );
 }

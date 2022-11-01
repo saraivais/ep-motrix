@@ -1,0 +1,43 @@
+.login-create-page {
+  align-items: center;
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+.user-inputs {
+  background-color: #D1D1D1;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Kanit', sans-serif;
+  padding: 10px;
+  width: 80%;
+}
+
+.user-button {
+  background-color: #F5E640;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.3em;
+  padding: 10px;
+  width: 80%;
+  transition: 1s;
+}
+
+.user-button:disabled {
+  background-color: black;
+  color: #1F1F1F;
+  font-size: 1.3em;
+}

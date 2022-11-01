@@ -1,0 +1,90 @@
+.details-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 3px solid red; */
+  padding: 30px;
+  width: 100%;
+}
+
+.details-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+  /* border: 3px solid blue; */
+  width: 95%;
+}
+
+.details-latest-content {
+  background: linear-gradient(145deg, rgb(139, 139, 139) 14%, rgb(224, 219, 219) 49%);
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.details-title {
+  font-family: 'Kanit', sans-serif;
+  text-align: center;
+  font-size: 2.2em;
+}
+
+.details-body {
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.3em;
+  margin: 5px 0;
+  text-align: justify;
+}
+
+.details-updated {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+}
+
+.details-date {
+  font-weight: 300;
+}
+
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0;
+  width: 70%;
+}
+.edit-btn {
+  background-color: #2EB8E8;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Kanit', sans-serif;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.delete-btn {
+  background-color: #F5E640;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Kanit', sans-serif;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.history-title {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.6em;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  width: 100vw;
+}
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 95%;
+}

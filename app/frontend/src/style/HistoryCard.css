@@ -1,0 +1,30 @@
+.history-card {
+  align-items: center;
+  background-color: rgba(209, 209, 209, 0.6);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 7px 0;
+}
+
+.history-card-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.3em;
+}
+
+.history-card-body {
+  font-family: 'Slabo 27px', serif;
+  font-size: 0.95em;
+  text-align: justify;
+  padding: 5px;
+  width: 95%;
+}
+
+.history-card-update {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+}
+
+.history-date {
+  font-weight: 300;
+}

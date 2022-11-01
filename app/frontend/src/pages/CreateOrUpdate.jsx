@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import { editOneContent, getOneContent, createContent } from '../requests/content';
 import contentContext from '../context/context';
+import '../style/CreateOrUpdate.css';
 
 function CreateOrUpdate() {
   const navigate = useNavigate();
@@ -51,10 +52,10 @@ function CreateOrUpdate() {
   };
 
   return (
-    <div>
-      <input name="title" type="text" value={content.title} onChange={onChange} />
-      <textarea name="body" cols="70" rows="10" value={content.body} onChange={onChange} />
-      <button type="button" onClick={editOrCreate} disabled={disabled}>Enviar</button>
+    <div className="edit-container">
+      <input className="title-input" name="title" type="text" value={content.title} onChange={onChange} />
+      <textarea className="body-input" name="body" cols="70" rows="10" value={content.body} onChange={onChange} />
+      <button className="send-button" type="button" onClick={editOrCreate} disabled={disabled}>Enviar</button>
     </div>
   );
 }

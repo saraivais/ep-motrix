@@ -1,0 +1,64 @@
+.content-card-container {
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgb(139, 139, 139) 14%, rgb(224, 219, 219) 49%);
+  box-shadow: black 0px 18px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 18px 0;
+  padding: 18px;
+  width: 85%;
+}
+
+.content-card-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: 2em;
+}
+
+.content-card-body {
+  color: #1F1F1F;
+  text-align: justify;
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.1em;
+  margin: 5px 0;
+  width: 85%;
+}
+
+.content-card-updated {
+  font-family: 'Slabo 27px', serif;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.update-date {
+  font-weight: 300;
+}
+
+.details-and-delete-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.details-btn {
+  border: none;
+  border-radius: 10px;
+  background-color: #2EB8E8;
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  padding: 8px;
+}
+
+.delete-label {
+  background-color: #1F1F1F;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  padding: 8px;
+}
+
+.delete-checkbox {
+  margin: 4px;
+}
