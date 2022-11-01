@@ -11,10 +11,10 @@ function Header() {
   return (
     <header className="header-container">
       { user !== '' && (
-      <p>
-        Hello,
+      <p className="user-greeting">
+        Olá,
         {' '}
-        { user }
+        <span className="user-mail">{ user }</span>
       </p>
       )}
       <Link className="header-link" to="/create">
