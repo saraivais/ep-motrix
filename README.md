@@ -37,7 +37,7 @@ Before proceding to the installation, please make sure you have Docker, Docker-c
 
 1. Clone the repository and access the created directory:
 ```
-git clone 
+git clone git@github.com:saraivais/ep-motrix.git
 cd ep-motrix
 ```
 
@@ -107,7 +107,7 @@ A conexão entre as partes Back-end e Front-end da aplicação foi feita usando 
 Antes de iniciar a instalação, por favor se assegure que possui instalados Docker, Docker-compose e Node.js em sua máquina.
 1. Clone o repositório e acesse o diretório criado:
 ```
-git clone
+git clone git@github.com:saraivais/ep-motrix.git
 cd ep-motrix
 ```
 
