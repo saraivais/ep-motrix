@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getOneContent, deleteOne } from '../requests/content';
 import HistoryCard from '../components/HistoryCard';
 import contentContext from '../context/context';
+import '../style/Details.css';
 
 function Details() {
   const { id } = useParams();
@@ -29,22 +30,26 @@ function Details() {
   };
 
   return (
-    <div>
+    <div className="details-page">
       {contentDetails && (
-        <div>
-          <h1>{contentDetails.title}</h1>
-          <p>{contentDetails.body}</p>
-          <p>
-            Last updated:
-            {' '}
-            <span>{contentDetails.updated}</span>
-          </p>
-          <Link to={`/update/${id}`}>
-            <button type="button">Editar</button>
-          </Link>
-          <button type="button" onClick={deleteThisPost}>Deletar</button>
-          <div>
-            <h2>History</h2>
+        <div className="details-container">
+          <div className="details-latest-content">
+            <h1 className="details-title">{contentDetails.title}</h1>
+            <p className="details-body">{contentDetails.body}</p>
+            <p className="details-updated">
+              Última modificação:
+              {' '}
+              <span className="details-date">{contentDetails.updated}</span>
+            </p>
+          </div>
+          <div className="buttons-container">
+            <Link to={`/update/${id}`}>
+              <button className="edit-btn" type="button">Editar</button>
+            </Link>
+            <button className="delete-btn" type="button" onClick={deleteThisPost}>Apagar</button>
+          </div>
+          <h2 className="history-title">Histórico de Modificações:</h2>
+          <div className="history-container">
             {contentDetails.history
               .map((historyObj) => <HistoryCard key={`${historyObj.title}-${historyObj.updated}`} hist={historyObj} />)}
           </div>
