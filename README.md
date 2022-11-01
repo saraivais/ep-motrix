@@ -50,6 +50,8 @@ npm run compose:up
 ```
 http://localhost:3000/
 ```
+⚠️ _If you do wish to try out the application, please login using email **motrix@one.com** and password **motrix1**_
+  
 4. **If you wish to test the API using its integration tests:**
 
 5. Use the following script command to access the back-end container:
@@ -118,6 +120,8 @@ npm run compose:up
 ```
 http://localhost:3000/
 ```
+⚠️ _Se você deseja navegar pela aplicação, faça login utilizando o e-mail **motrix@one.com** e a senha **motrix1**_
+  
 4. **Se você deseja testar a API usando seus testes de integração:**
 
 5. Use o seguinte comando de script para acessar o contêiner de back-end:
