@@ -1,0 +1,17 @@
+.footer-container {
+  align-items: center;
+  background-color: #2EB8E8;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+  width: 100vw;
+}
+
+.footer-text {
+  font-family: 'Kanit', sans-serif;
+}
+
+.footer-link-images {
+  height: 35px;
+  margin: 1px 6px;
+}
