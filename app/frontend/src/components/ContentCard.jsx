@@ -26,7 +26,7 @@ function ContentCard(props) {
       <h1 className="content-card-title">{title}</h1>
       <p className="content-card-body">{body}</p>
       <p className="content-card-updated">
-        Último update:
+        Última modificação:
         {' '}
         <span className="update-date">{updated}</span>
       </p>
