@@ -8,6 +8,7 @@
     "compose:down": "(cd app && docker-compose down --remove-orphans)",
     "compose:up:dev": "(cd app && docker-compose -f docker-compose.dev.yml up -d --build)",
     "compose:down:dev": "(cd app && docker-compose -f docker-compose.dev.yml down --remove-orphans)",
+    "enter:backend": "(docker exec -it app_backend sh)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
