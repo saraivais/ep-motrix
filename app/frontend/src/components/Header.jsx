@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import contentContext from '../context/context';
+import newIcon from '../icons/new-file-svgrepo-com.svg';
+import homeIcon from '../icons/home-svgrepo-com.svg';
+import '../style/Header.css';
 
 function Header() {
   const { authorization: { user } } = useContext(contentContext);
 
   return (
-    <header>
+    <header className="header-container">
       { user !== '' && (
       <p>
         Hello,
@@ -14,21 +17,25 @@ function Header() {
         { user }
       </p>
       )}
-      <Link to="/create">
-        <button type="button">Criar um novo post</button>
+      <Link className="header-link" to="/create">
+        <img className="header-icons" src={newIcon} alt="new-post" />
+        <p>Novo</p>
+        {/* <button type="button">Criar um novo post</button> */}
       </Link>
-      <Link to="/home">
-        <button type="button">Página principal</button>
+      <Link className="header-link" to="/home">
+        <img className="header-icons" src={homeIcon} alt="new-post" />
+        <p>Página Inicial</p>
+        {/* <button type="button">Página principal</button> */}
       </Link>
       { user === '' && (
-      <>
+      <div className="user-header">
         <Link to="/">
-          <button type="button">Login</button>
+          <button className="header-button" type="button">Login</button>
         </Link>
         <Link to="/signup">
-          <button type="button">Criar conta</button>
+          <button className="header-button" type="button">Criar conta</button>
         </Link>
-      </>
+      </div>
       )}
     </header>
   );
