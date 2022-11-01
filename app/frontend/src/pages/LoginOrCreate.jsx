@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import contentContext from '../context/context';
 import { postLogin, createUser } from '../requests/users';
+import '../style/LoginOrCreate.css';
 
 function LoginOrCreate() {
   const [loginInfo, setLoginInfo] = useState({ email: '', password: '' });
@@ -56,11 +57,11 @@ function LoginOrCreate() {
   }, [loginInfo]);
 
   return (
-    <div>
-      <form>
-        <input type="text" name="email" value={loginInfo.email} onChange={onChange} />
-        <input type="password" name="password" value={loginInfo.password} onChange={onChange} />
-        <button type="button" disabled={valid} onClick={pathname === '/' ? loginAndSaveToken : createAndSaveToken}>Login</button>
+    <div className="login-create-page">
+      <form className="form-container">
+        <input className="user-inputs" type="text" name="email" value={loginInfo.email} onChange={onChange} />
+        <input className="user-inputs" type="password" name="password" value={loginInfo.password} onChange={onChange} />
+        <button className="user-button" type="button" disabled={valid} onClick={pathname === '/' ? loginAndSaveToken : createAndSaveToken}>{ pathname === '/' ? 'Login' : 'Criar'}</button>
       </form>
     </div>
   );
