@@ -32,7 +32,6 @@ The API's documentation was created and published using **Postman** and can be f
 
 The connection between Back-end and Front-end parts of the application was made using **Axios**. The Front-end part of the project was developed using **React** and styled with **CSS3**. The **React Router** library was used to enable routing in this Single Page Application and **React's** native **Context API** and **Hooks** composed the application's state management.
 
-### Comments
 ### Installation
 Before proceding to the installation, please make sure you have Docker, Docker-compose and Node.js installed on your machine.
 
@@ -60,6 +59,12 @@ http://localhost:3000/
   ```
   npm test
   ```
+
+### Comments
+This project was very enjoyable to develop and I learned a lot about containerization and container orchestration through docker-compose. The creation of a **development docker-compose file** allowed me to maintain the containers up during development and problem-solve as needed, for I had always script monitoring using volumes and development tools such as **nodemon** and **ts-node**.
+I also took this as an opportunity to learn a new tool, **Axios**, to make the Back-end and Front-end connection using my own API, and to get better at project setup, using **airbnb eslint** to monitor a fluid code development.
+For the future of this project, I wish to implement a new feature, an editing tool to fully implement **wysiwyg** and to create a testing coverage using **Cypress**.
+Overall, I am happy with this project's development and the result I got. Hope you all enjoy!
 
 </details>
 
@@ -95,7 +100,6 @@ A documentação da API foi criada e publicada usando o **Postman** e pode ser e
 
 A conexão entre as partes Back-end e Front-end da aplicação foi feita usando o **Axios**. A parte Front-end do projeto foi desenvolvida usando **React** e estilizada com **CSS3**. A biblioteca **React Router** foi usada para habilitar o roteamento nesta Single Page Application e o **Context API**, nativo do **React**, e os **Hooks** compuseram o gerenciamento de estado do aplicativo.
 
-### Comentários
 ### Instalação
 Antes de iniciar a instalação, por favor se assegure que possui instalados Docker, Docker-compose e Node.js em sua máquina.
 1. Clone o repositório e acesse o diretório criado:
@@ -123,4 +127,11 @@ http://localhost:3000/
   ```
   npm test
   ```
+
+### Comentários
+Este projeto foi muito agradável de desenvolver e aprendi muito sobre conteinerização e orquestração de contêineres através do docker-compose. A criação de um **arquivo de composição docker de desenvolvimento** me permitiu manter os contêineres ativos durante o desenvolvimento e solucionar problemas conforme necessário, pois sempre tive monitoramento de scripts usando volumes e ferramentas de desenvolvimento como **nodemon** e **ts-node**.
+Também aproveitei isso como uma oportunidade para aprender uma nova ferramenta, **Axios**, para fazer a conexão Back-end e Front-end usando minha própria API e também melhorar a configuração do projeto, usando o **airbnb eslint** para monitorar um desenvolvimento fluido de código.
+Para o futuro deste projeto, desejo implementar um novo recurso, uma ferramenta de edição para implementar totalmente o **wysiwyg** e criar uma cobertura de testes usando o **Cypress**.
+No geral, estou feliz com o desenvolvimento deste projeto e com o resultado que obtive. Espero que gostem!
+
 </details>
