@@ -1,0 +1,48 @@
+.header-container {
+  align-items: center;
+  background-color: #F5E640;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4px 0;
+  width: 100vw;
+}
+
+.header-link {
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Kanit', sans-serif;
+  text-decoration: none;
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-button {
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Kanit', sans-serif;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.8s;
+}
+
+.header-button:hover {
+  background-color: #2EB8E8;
+}
+
+.header-icons {
+  height: 50px;
+  margin: 3px;
+}
+
+/* 
+black: #1F1F1F
+blue: #2EB8E8
+yellow: #F5E640
+gray: #D1D1D1
+*/
