@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import contentContext from '../context/context';
+import '../style/ContentCard.css';
 
 function ContentCard(props) {
   const { massDelete: { setDeleteList } } = useContext(contentContext);
@@ -21,14 +22,23 @@ function ContentCard(props) {
   };
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{body}</p>
-      <p>{updated}</p>
-      <Link to={`/content/${id}`}>
-        <button type="button">Detalhes</button>
-      </Link>
-      <input type="checkbox" name="delete" onChange={onChecked} />
+    <div className="content-card-container">
+      <h1 className="content-card-title">{title}</h1>
+      <p className="content-card-body">{body}</p>
+      <p className="content-card-updated">
+        Último update:
+        {' '}
+        <span className="update-date">{updated}</span>
+      </p>
+      <div className="details-and-delete-container">
+        <Link to={`/content/${id}`}>
+          <button className="details-btn" type="button">Detalhes</button>
+        </Link>
+        <label className="delete-label" htmlFor={`${id}-delete`}>
+          Apagar
+          <input className="delete-checkbox" type="checkbox" name="delete" id={`${id}-delete`} onChange={onChecked} />
+        </label>
+      </div>
     </div>
   );
 }
