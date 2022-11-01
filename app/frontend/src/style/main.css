@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+/* font-family: 'Amiri', serif; */
 
 * {
   box-sizing: border-box;
@@ -10,6 +12,7 @@
 
 .app {
   align-items: center;
+  background-color: #1F1F1F;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
